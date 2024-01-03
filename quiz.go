@@ -28,8 +28,6 @@ func main() {
 		exit(fmt.Sprintf("Failed to parse csv file: %s\n", *filename))
 	}
 
-	timer := time.NewTimer(time.Duration(*timeLimit) * time.Second)
-
 	problems := parseLines(lines)
 
 	if *shuffle {
@@ -38,6 +36,7 @@ func main() {
 		})
 	}
 
+	timer := time.NewTimer(time.Duration(*timeLimit) * time.Second)
 	correct := 0
 
 problemloop:
